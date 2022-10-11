@@ -39,7 +39,7 @@ Further I check the changes every evening.
 
 ### and work ###
 
-> erstellt von Sascha Dietrich
+> erstellt von Sascha Dietrich</br>
 > für die Richtigkeit der Informationen übernehme ich keinerlei Haftung
 
-weitere Änderungen
+
