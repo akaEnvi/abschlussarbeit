@@ -15,7 +15,9 @@
    - `git init .`
 5. pull the project
    - `git pull https://github.com/coding-bootcamps-eu/protocol-app-class-july.git`
-6. switch branch to your own user
+6. add remote repro
+   - `git remote add dreadderino1987 https://github.com/coding-bootcamps-eu/protocol-app-class-july.git`
+7. switch branch to your own user
    - `git checkout -b YOUR_USERNAME`
 
 Then u can write your parts as u do it normaly and push it. At github I see a new commit and after controll the commit I can merge the change.
