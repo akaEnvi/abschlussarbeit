@@ -1,8 +1,8 @@
 #### Please ####
 
-# **DON'T PANIC :-)** #
+# DON'T PANIC :-) #
 
-##starting instruction##
+## starting instruction ##
 
 (you can copy the commands to terminal)
 
@@ -25,7 +25,7 @@ Please contact me at Discord, if you wanna do an pull request.
 Further I check the changes every evening.
 
 
-## Daily starting ##
+## Daily Instruction ##
 
 After merging please don't forot to get the actuall version of main branch.
 To be consistent to the actuall merge don't forgot to pull the repository.
