@@ -39,6 +39,8 @@ To be consistent to the actuall merge don't forgot to pull the repository.
    - ```git pull```
 5. switch to your account
    - ```git checkout USERNAME```
+6. merge your with the remote branche
+   - ```git merge USERNAME main```
 
 > erstellt von Sascha Dietrich
 > für die Richtigkeit der Informationen übernehme ich keinerlei Haftung
