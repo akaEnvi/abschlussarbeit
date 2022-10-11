@@ -28,6 +28,10 @@ Further I check the changes every evening.
 
 ## Daily Instruction
 
+1. `git pull https://github.com/coding-bootcamps-eu/protocol-app-class-july.git`
+
+### and work ###
+
 > erstellt von Sascha Dietrich
 > für die Richtigkeit der Informationen übernehme ich keinerlei Haftung
 
