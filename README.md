@@ -33,6 +33,6 @@ To be consistent to the actuall merge don't forgot to pull the repository.
 3. change your branch to main
    git checkout main
 4. get the actuall version of the project
-   git pull https://github.com/coding-bootcamps-eu/protocol-app-class-july.git
+   git pull
 5. switch to your account
    git checkout USERNAME
