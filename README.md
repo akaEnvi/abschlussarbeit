@@ -1,3 +1,5 @@
+Please
+
 DON'T PANIC :-)
 
 starting instruction
@@ -15,3 +17,22 @@ starting instruction
    git pull https://github.com/coding-bootcamps-eu/protocol-app-class-july.git
 6. switch branch to your own user
    git checkout -b YOUR_USERNAME
+
+Then u can write your parts as u do it normaly and push it. At github I see a new commit and after controll the commit I can merge the change.
+
+Please contact me at Discord, if you wanna do an pull request.
+
+Further I check the changes every evening.
+
+After merging please don't forot to get the actuall version of main branch.
+To be consistent to the actuall merge don't forgot to pull the repository.
+
+1. open terminal
+2. go to your base directory
+   cd ~/protocol-app-class-july
+3. change your branch to main
+   git checkout main
+4. get the actuall version of the project
+   git pull
+5. switch to your account
+   git checkout USERNAME
