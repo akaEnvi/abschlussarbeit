@@ -12,7 +12,7 @@
 2. go to your base/working directory
    - `cd ~` / `cd WORKINGDIRECTORY`
 3. create a project directory
-   - `mkdir protocol-app-class-july`
+   - `mkdir protocol-app-class-july` --> `cd protocol-app-class-july`
 4. initial your git
    - `git init .`
 5. pull the project
