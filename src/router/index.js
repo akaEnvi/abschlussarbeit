@@ -1,6 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
+
 import Index from "../views/IndexView.vue";
 import questionList from "@/views/questionList.vue";
+
+import Index from "@/views/IndexView.vue";
+
+import RotiEvaluation from "@/views/RotiEvaluation.vue";
+import CheckIn from "@/views/CheckIn.vue";
+
 
 const routes = [
   {
@@ -9,11 +16,20 @@ const routes = [
     component: Index,
   },
 
+
   {
     path: "/questionList",
     name: "question",
     component: questionList,
   },
+
+  {
+    path: "/CheckIn",
+    name: "CheckIn",
+    component: CheckIn,
+  },
+  { path: "/Roti", name: "RotiEvalution", component: RotiEvaluation },
+
 ];
 
 const router = createRouter({
