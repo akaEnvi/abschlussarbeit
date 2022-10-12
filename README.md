@@ -24,11 +24,11 @@
 8. add remote repro
    - `git remote add YOUR_USERNAME https://github.com/coding-bootcamps-eu/protocol-app-class-july.git`
 9. switch branch to your own user
-   - `git checkout -b YOUR_USERNAME`
+    - `git checkout -b YOUR_USERNAME`
 10. open code  
-   - `code .`
+    - `code .`
 11. start development server
-   - `npm run serve`
+    - `npm run serve`
   
 
 Then u can write your parts as u do it normaly and push it. At github I see a new commit and after controll the commit I can merge the change.
