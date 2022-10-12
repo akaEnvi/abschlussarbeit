@@ -1,4 +1,8 @@
 <template>
-  <nav><router-link to="/">Home</router-link> |</nav>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/CheckIn">CheckIn</router-link>|
+    <router-link to="/Roti">Roti</router-link>|
+  </nav>
   <router-view />
 </template>
