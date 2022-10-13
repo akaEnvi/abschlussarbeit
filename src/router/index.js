@@ -8,7 +8,13 @@ import LearningListView from "@/views/LearningListView.vue";
 import QuestionListView from "@/views/QuestionListView.vue";
 import HubView from "@/views/HubView.vue";
 
+
+import RotiEvaluation from "@/views/RotiEvaluation.vue";
+import AttendeesList from "@/views/AttendeesList.vue";
+import CheckIn from "@/views/CheckIn.vue";
+
 import AttendeeList from "@/views/AttendeesList.vue";
+
 
 const routes = [
   {
@@ -24,6 +30,7 @@ const routes = [
   },
 
   {
+
     path: "/CheckInView",
     name: "CheckIn",
     component: CheckInView,
