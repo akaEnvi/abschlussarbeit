@@ -4,6 +4,7 @@ import Index from "../views/IndexView.vue";
 import questionList from "@/views/questionList.vue";
 
 import RotiEvaluation from "@/views/RotiEvaluation.vue";
+import AttendeesList from "@/views/AttendeesList.vue";
 import CheckIn from "@/views/CheckIn.vue";
 
 const routes = [
@@ -17,6 +18,12 @@ const routes = [
     path: "/questionList",
     name: "question",
     component: questionList,
+  },
+
+  {
+    path: "/attendees-list",
+    name: "attendees-list",
+    component: AttendeesList,
   },
 
   {

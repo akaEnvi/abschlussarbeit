@@ -1,4 +1,5 @@
 <template>
+  Der Moderator ist {{ $store.state.moderator }}
   <div class="header">
     <h1>Questions</h1>
     <button class="add">Add</button>
