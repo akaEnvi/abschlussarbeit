@@ -1,14 +1,26 @@
 <template>
-  <div class="">
-    <button>+</button>
-    <h1>What did you learn today?</h1>
-    <textarea id="text" name="text" cols="35" rows="4"></textarea>
-    <input type="submit" value="Senden" /> <br />
-    <textarea id="text" name="text" cols="35" rows="4"></textarea>
-    <input type="submit" value="Senden" /> <br />
-    <textarea id="text" name="text" cols="35" rows="4"></textarea>
-    <input type="submit" value="Senden" /> <br />
-    <textarea id="text" name="text" cols="35" rows="4"></textarea>
-    <input type="submit" value="Senden" />
-  </div>
+  <h1>What I learned today</h1>
+  <addBtn></addBtn>
+  <br />
+  <TheTextarea placeholder="Knowledge"></TheTextarea>
+  <trashBtn></trashBtn>
+  <br />
+  <backBtn></backBtn>
+  <backBtn></backBtn>
 </template>
+
+<script>
+import backBtn from "@/components/Button/backBtn.vue";
+import addBtn from "@/components/Button/addBtn.vue";
+import trashBtn from "@/components/Button/trashBtn.vue";
+import TheTextarea from "@/components/TheTextarea.vue";
+
+export default {
+  components: {
+    backBtn,
+    addBtn,
+    TheTextarea,
+    trashBtn,
+  },
+};
+</script>

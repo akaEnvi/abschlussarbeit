@@ -1,32 +1,26 @@
 <template>
-  <div class="header">
-    <h1>Questions</h1>
-    <button class="add">Add</button>
-  </div>
-  <div class="main">
-    <form class="question-list">
-      <div>
-        <input type="text" placeholder=" Platzhalter" />
-        <button>löschen</button>
-      </div>
-      <div>
-        <input type="text" placeholder=" Platzhalter" />
-        <button>löschen</button>
-      </div>
-      <div>
-        <input type="text" placeholder=" Platzhalter" />
-        <button>löschen</button>
-      </div>
-      <div>
-        <input type="text" placeholder=" Platzhalter" />
-        <button>löschen</button>
-      </div>
-    </form>
-  </div>
-  <button class="submit">Submit</button>
-  <button class="back">Back</button>
+  <h1>What I learned today</h1>
+  <addBtn></addBtn>
+  <br />
+  <TheTextarea placeholder="Question"></TheTextarea>
+  <trashBtn></trashBtn>
+  <br />
+
+  <button><textBtn>To Main Menu</textBtn></button>
 </template>
 
-<script></script>
+<script>
+import addBtn from "@/components/Button/addBtn.vue";
+import trashBtn from "@/components/Button/trashBtn.vue";
+import TheTextarea from "@/components/TheTextarea.vue";
+import textBtn from "@/components/Button/textBtn.vue";
 
-<style scoped></style>
+export default {
+  components: {
+    addBtn,
+    TheTextarea,
+    trashBtn,
+    textBtn,
+  },
+};
+</script>
