@@ -1,35 +1,30 @@
 import { createRouter, createWebHistory } from "vue-router";
-
-import Index from "../views/IndexView.vue";
-import questionList from "@/views/questionList.vue";
-
-import Index from "@/views/IndexView.vue";
-
-import RotiEvaluation from "@/views/RotiEvaluation.vue";
-import CheckIn from "@/views/CheckIn.vue";
-
+import HomeView from "@/views/HomeView.vue";
+import about from "@/views/AboutView.vue";
+import AttendeesList from "@/views/AttendeesList.vue";
 
 const routes = [
   {
     path: "/",
-    name: "Index",
-    component: Index,
+    name: "home",
+    component: HomeView,
   },
-
-
   {
-    path: "/questionList",
-    name: "question",
-    component: questionList,
+    path: "/about",
+    name: "about",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: about,
   },
-
   {
-    path: "/CheckIn",
-    name: "CheckIn",
-    component: CheckIn,
+    path: "/AttendeesList",
+    name: "AttendeesList",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: AttendeesList,
   },
-  { path: "/Roti", name: "RotiEvalution", component: RotiEvaluation },
-
 ];
 
 const router = createRouter({

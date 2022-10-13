@@ -1,12 +1,8 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-
-    <router-link to="/questionList">Questions</router-link> |
-
-    <router-link to="/CheckIn">CheckIn</router-link>|
-    <router-link to="/Roti">Roti</router-link>|
-
+    <router-link to="/AttendeesList">AttendeeList</router-link> |
+    <router-link to="/about">About</router-link>
   </nav>
   <router-view />
 </template>
