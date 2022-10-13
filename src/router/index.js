@@ -8,12 +8,21 @@ import LearningListView from "@/views/LearningListView.vue";
 import QuestionListView from "@/views/QuestionListView.vue";
 import HubView from "@/views/HubView.vue";
 
+import AttendeeList from "@/views/AttendeesList.vue";
+
 const routes = [
   {
     path: "/",
     name: "Index",
     component: Index,
   },
+
+  {
+    path: "/AttendeeList",
+    name: "AttendeeList",
+    component: AttendeeList,
+  },
+
   {
     path: "/CheckInView",
     name: "CheckIn",
