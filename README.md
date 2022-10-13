@@ -36,7 +36,7 @@ Please contact me at Discord, if you wanna do an pull request.
 Further I check the changes every evening.
 
 ## Daily Instruction
- - `git merge main`
+ - `git pull https://github.com/coding-bootcamps-eu/protocol-app-class-july.git main`
 
 ### and work
 
