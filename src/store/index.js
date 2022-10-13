@@ -1,17 +1,17 @@
 import { createStore } from "vuex";
 
-function getUsers(users) {
+function splitUserByClasses(users) {
   const result = {};
 
   for (let user of users) {
     const className = user.className;
-    if (Object.prototype.hasOwnProperty.call(result, className)) {
-      result[className].attendees.push(user);
-    } else {
+
+    if (!Object.prototype.hasOwnProperty.call(result, className)) {
       result[className] = {};
       result[className].attendees = [];
-      result[className].attendees.push(user);
     }
+
+    result[className].attendees.push(user);
   }
 
   return result;
@@ -45,7 +45,7 @@ export default createStore({
           return Promise.reject(error);
         }
         ctx.state.users = attendeeData;
-        ctx.state.usersByClass = getUsers(attendeeData);
+        ctx.state.usersByClass = splitUserByClasses(attendeeData);
       } catch (error) {
         // this.errorMessage = error;
         console.error("There was an error!", error);
