@@ -3,9 +3,9 @@
     <thead>
       <tr>
         Name:<br />
-        <input type="text" name="name" /><br />
+        <TheName /><br />
 
-        <textarea placeholder="Summary your day!" rows="5"></textarea>
+        <TheTextarea />
         <br />
         How do you rate your day?<br />
         <i>(1 = Warum bin ich aufgestanden?, 5 = überragend)</i>
@@ -26,9 +26,21 @@
         5 |
         <br />
 
-        <textarea placeholder="ROTI-Summary!" rows="5"></textarea>
+        <TheTextarea />
         <br />
       </tr>
     </thead>
   </table>
 </template>
+
+<script>
+import TheTextarea from "@/components/TheTextarea.vue";
+import TheName from "@/components/TheName.vue";
+
+export default {
+  components: {
+    TheTextarea,
+    TheName,
+  },
+};
+</script>
