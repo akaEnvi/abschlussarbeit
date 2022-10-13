@@ -3,18 +3,29 @@
     <thead>
       <tr>
         Name:<br />
-        <input type="text" name="name" />
+        <TheName />
         <br />
         Was lief gestern suboptimal?
         <br />
-        <textarea placeholder=" Was lief gestern suboptimal?" rows="5">
-        </textarea>
+        <TheTextarea />
         <br />
         Daily Goals!
         <br />
-        <textarea placeholder="Daily Goals!" rows="5"></textarea>
+        <TheTextarea />
         <br />
       </tr>
     </thead>
   </table>
 </template>
+
+<script>
+import TheTextarea from "@/components/TheTextarea.vue";
+import TheName from "@/components/TheName.vue";
+
+export default {
+  components: {
+    TheTextarea,
+    TheName,
+  },
+};
+</script>
