@@ -36,8 +36,7 @@ Please contact me at Discord, if you wanna do an pull request.
 Further I check the changes every evening.
 
 ## Daily Instruction
-
-    - `git merge main`
+ - `git merge main`
 
 ### and work
 
