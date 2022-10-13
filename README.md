@@ -37,7 +37,7 @@ Further I check the changes every evening.
 
 ## Daily Instruction
 
-
+    - `git merge main`
 
 ### and work
 
