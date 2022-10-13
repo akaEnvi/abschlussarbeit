@@ -37,7 +37,7 @@ Further I check the changes every evening.
 
 ## Daily Instruction
 
-1. `git fetch https://github.com/coding-bootcamps-eu/protocol-app-class-july.git`
+
 
 ### and work
 
