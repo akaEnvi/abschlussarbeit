@@ -1,31 +1,25 @@
 <template>
-  <table>
-    <thead>
-      <tr>
-        Name:<br />
-        <TheName />
-        <br />
-        Was lief gestern suboptimal?
-        <br />
-        <TheTextarea />
-        <br />
-        Daily Goals!
-        <br />
-        <TheTextarea />
-        <br />
-      </tr>
-    </thead>
-  </table>
+  <DropdownClass></DropdownClass>
+  <CheckboxAttendance></CheckboxAttendance>
+  <br />
+  <TheTextarea placeholder="What was frustrating yesterday"></TheTextarea>
+  <br />
+  <TheTextarea placeholder="What are my daily goals"></TheTextarea>
+  <br />
+
+  <backBtn></backBtn>
 </template>
 
 <script>
 import TheTextarea from "@/components/TheTextarea.vue";
-import TheName from "@/components/TheName.vue";
+import DropdownClass from "@/components/DropdownClass.vue";
+import backBtn from "@/components/Button/backBtn.vue";
 
 export default {
   components: {
     TheTextarea,
-    TheName,
+    DropdownClass,
+    backBtn,
   },
 };
 </script>

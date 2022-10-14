@@ -1,5 +1,17 @@
 <template>
-  <h1>Hub</h1>
+  <button><textBtn>Check In</textBtn></button>
+  <br />
+  <button><textBtn>Live Session</textBtn></button>
+  <br />
+  <button><textBtn>Check Out</textBtn></button>
 </template>
 
-<script></script>
+<script>
+import textBtn from "@/components/Button/textBtn.vue";
+
+export default {
+  components: {
+    textBtn,
+  },
+};
+</script>

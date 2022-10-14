@@ -28,6 +28,18 @@
   <button class="back">Back</button>
 </template>
 
-<script></script>
+<script>
+import addBtn from "@/components/Button/addBtn.vue";
+import trashBtn from "@/components/Button/trashBtn.vue";
+import TheTextarea from "@/components/TheTextarea.vue";
+import textBtn from "@/components/Button/textBtn.vue";
 
-<style scoped></style>
+export default {
+  components: {
+    addBtn,
+    TheTextarea,
+    trashBtn,
+    textBtn,
+  },
+};
+</script>
