@@ -27,15 +27,34 @@ const routes = [
   },
 
   {
-    path: "/questionList",
-    name: "question",
-    component: questionList,
-  },
-
-  {
-    path: "/CheckIn",
+    path: "/CheckInView",
     name: "CheckIn",
-    component: CheckIn,
+    component: CheckInView,
+  },
+  {
+    path: "/CheckOutView",
+    name: "CheckOut",
+    component: CheckOutView,
+  },
+  {
+    path: "/LiveSessionView",
+    name: "LiveSession",
+    component: LiveSessionView,
+  },
+  {
+    path: "/LearningListView",
+    name: "LearningList",
+    component: LearningListView,
+  },
+  {
+    path: "/QuestionListView",
+    name: "QuestionList",
+    component: QuestionListView,
+  },
+  {
+    path: "/HubView",
+    name: "HubView",
+    component: HubView,
   },
 
   {

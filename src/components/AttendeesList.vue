@@ -11,6 +11,12 @@
 <script>
 export default {
   name: "AttendeesList",
+
+  computed: {
+    attendees() {
+      return this.$store.getters.getUserByClass["2022-09"]?.attendees;
+    },
+
   data() {
     return {
       attendees: [],
@@ -33,6 +39,7 @@ export default {
         this.errorMessage = error;
         console.error("There was an error!", error);
       });
+
   },
 };
 </script>
