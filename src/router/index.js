@@ -49,12 +49,6 @@ const routes = [
     name: "HubView",
     component: HubView,
   },
-
-  {
-    path: "/LiveSessionView",
-    name: "LiveSession",
-    component: LiveSessionView,
-  },
 ];
 
 const router = createRouter({
