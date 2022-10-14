@@ -19,16 +19,27 @@ function splitUserByClasses(users) {
 
 export default createStore({
   state: {
-    moderator: "Hans Werner Müller",
+    moderatorName: "",
     users: [],
     usersByClass: [],
+    currentClass: "",
   },
   getters: {
     getUserByClass(state) {
       return state.usersByClass;
     },
+    getCurrentClassAttendees(state) {
+      return state.usersByClass[state.currentClass].attendees;
+    },
   },
-  mutations: {},
+  mutations: {
+    setCurrentClass(state, value) {
+      state.currentClass = value;
+    },
+    setModeratorName(state, value) {
+      state.moderatorName = value;
+    },
+  },
   actions: {
     async getUsers(ctx) {
       try {
