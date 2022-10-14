@@ -1,17 +1,28 @@
 <template>
-  <button><textBtn>Check In</textBtn></button>
+  <button @click="$router.push('CheckInView')">
+    <textBtn>Check In</textBtn>
+  </button>
   <br />
-  <button><textBtn>Live Session</textBtn></button>
+  <button @click="$router.push('CheckOutView')">
+    <textBtn>Live Session</textBtn>
+  </button>
   <br />
-  <button><textBtn>Check Out</textBtn></button>
+  <button @click="$router.push('CheckOutView')">
+    <textBtn>Check Out</textBtn>
+  </button>
+  <br />
+
+  <backBtn @click="$router.push('/')"></backBtn>
 </template>
 
 <script>
 import textBtn from "@/components/Button/textBtn.vue";
+import backBtn from "@/components/Button/backBtn.vue";
 
 export default {
   components: {
     textBtn,
+    backBtn,
   },
 };
 </script>

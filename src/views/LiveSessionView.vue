@@ -4,7 +4,9 @@
   <input type="checkbox" name="test" id="" />
   <label for="test">Muss geklärt werden</label>
   <br />
-  <button><textBtn>Feedback</textBtn></button>
+  <button @click="$router.push('LearningListView')">
+    <textBtn>Feedback</textBtn>
+  </button>
   <br />
   <backBtn></backBtn>
 </template>

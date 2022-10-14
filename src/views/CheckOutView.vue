@@ -1,6 +1,6 @@
 <template>
   <br />
-  <DropdownClass></DropdownClass>
+  <p>Name des Student</p>
   <br />
   <br />
   <TheTextarea placeholder="Rating of the day"></TheTextarea>
@@ -22,16 +22,24 @@
 
   <TheTextarea placeholder="Roti reason"></TheTextarea>
   <br />
+
+  <backBtn></backBtn>
+  <continueBtn></continueBtn>
+  <textBtn></textBtn>
 </template>
 
 <script>
 import TheTextarea from "@/components/TheTextarea.vue";
-import DropdownClass from "@/components/DropdownClass.vue";
+import continueBtn from "@/components/Button/continueBtn.vue";
+import backBtn from "@/components/Button/backBtn.vue";
+import textBtn from "@/components/Button/textBtn.vue";
 
 export default {
   components: {
     TheTextarea,
-    DropdownClass,
+    continueBtn,
+    backBtn,
+    textBtn,
   },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
-  <DropdownClass></DropdownClass>
-  <CheckboxAttendance></CheckboxAttendance>
+  <p>Name des Student</p>
+
   <br />
   <TheTextarea placeholder="What was frustrating yesterday"></TheTextarea>
   <br />
@@ -8,18 +8,22 @@
   <br />
 
   <backBtn></backBtn>
+  <continueBtn></continueBtn>
+  <textBtn></textBtn>
 </template>
 
 <script>
 import TheTextarea from "@/components/TheTextarea.vue";
-import DropdownClass from "@/components/DropdownClass.vue";
 import backBtn from "@/components/Button/backBtn.vue";
+import continueBtn from "@/components/Button/continueBtn.vue";
+import textBtn from "@/components/Button/textBtn.vue";
 
 export default {
   components: {
     TheTextarea,
-    DropdownClass,
     backBtn,
+    continueBtn,
+    textBtn,
   },
 };
 </script>
