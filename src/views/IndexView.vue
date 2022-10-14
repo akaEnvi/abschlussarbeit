@@ -12,7 +12,9 @@
   <button><textBtn>Generate moderator</textBtn></button>
   <br />
   <br />
-  <button><textBtn>Go to categories</textBtn></button>
+  <button @click="$router.push('HubView')">
+    <textBtn>Go to categories</textBtn>
+  </button>
 </template>
 
 <script>

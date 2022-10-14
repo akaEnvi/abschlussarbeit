@@ -10,7 +10,7 @@ import QuestionListView from "@/views/QuestionListView.vue";
 const routes = [
   {
     path: "/",
-    name: "Index",
+    name: "IndexView",
     component: Index,
   },
   {

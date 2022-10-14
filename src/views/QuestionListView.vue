@@ -6,13 +6,16 @@
   <trashBtn></trashBtn>
   <br />
   <backBtn></backBtn>
-  <button><textBtn>To Main</textBtn></button>
+  <continueBtn></continueBtn>
+  <textBtn></textBtn>
 </template>
 
 <script>
 import addBtn from "@/components/Button/addBtn.vue";
 import trashBtn from "@/components/Button/trashBtn.vue";
 import TheTextarea from "@/components/TheTextarea.vue";
+import backBtn from "@/components/Button/backBtn.vue";
+import continueBtn from "@/components/Button/continueBtn.vue";
 import textBtn from "@/components/Button/textBtn.vue";
 
 export default {
@@ -20,6 +23,8 @@ export default {
     addBtn,
     TheTextarea,
     trashBtn,
+    backBtn,
+    continueBtn,
     textBtn,
   },
 };
