@@ -1,16 +1,7 @@
 <template>
-
   <div>
     <TheDropDown />
   </div>
-</template>
-
-<script>
-import TheDropDown from "@/components/TheDropDown.vue";
-
-export default {
-  components: {
-    TheDropDown,
 
   <h1>Calendar week presenter</h1>
 
@@ -34,7 +25,6 @@ export default {
     // OutputModerator,
     textBtn,
     DropdownClass,
-
   },
 };
 </script>
