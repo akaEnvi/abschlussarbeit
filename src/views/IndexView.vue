@@ -1,5 +1,15 @@
 <template>
-  <h1>Test</h1>
+  <div>
+    <TheDropDown />
+  </div>
 </template>
 
-<script></script>
+<script>
+import TheDropDown from "@/components/TheDropDown.vue";
+
+export default {
+  components: {
+    TheDropDown,
+  },
+};
+</script>
