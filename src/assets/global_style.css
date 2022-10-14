@@ -1,3 +1,15 @@
+:root {
+  --clr-primary: #6a1cc3;
+  --clr-primary-inactiv: #6a1cc36e;
+  --clr-secondary: #8849cf;
+  --clr-surface: #fbfbfb;
+  --clr-text: hsla(0, 0%, 0%, 0.87);
+}
+
 body {
   display: block;
+  width: 650px;
+  margin: auto;
+  color: var(--clr-text);
+  background-color: var(--clr-surface);
 }
