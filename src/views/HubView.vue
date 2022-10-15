@@ -3,7 +3,7 @@
     <textBtn>Check In</textBtn>
   </button>
   <br />
-  <button @click="$router.push('CheckOutView')">
+  <button @click="$router.push('LiveSessionView')">
     <textBtn>Live Session</textBtn>
   </button>
   <br />
