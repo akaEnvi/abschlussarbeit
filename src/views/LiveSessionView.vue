@@ -8,7 +8,7 @@
     <textBtn>Feedback</textBtn>
   </button>
   <br />
-  <backBtn></backBtn>
+  <backBtn @click="$router.push('HubView')"></backBtn>
 </template>
 
 <script>
