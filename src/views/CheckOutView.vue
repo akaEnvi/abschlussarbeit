@@ -1,6 +1,9 @@
 <template>
   <br />
-  <p>Name des Student</p>
+  <p>
+    Name des Student:
+    {{ this.$store.getters.getCurrentClassAttendees[0].githubName }}
+  </p>
   <br />
   <br />
   <TheTextarea placeholder="Rating of the day"></TheTextarea>
