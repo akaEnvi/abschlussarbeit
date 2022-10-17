@@ -1,8 +1,10 @@
 <template>
   <p>
     Name des Student:
-    {{ studentName }}
+    {{ studentName }} <br />
+    {{ currentStep }}
   </p>
+  <button @click="$router.push('HubView')">to Hub</button>
 
   <br />
   <TheTextarea placeholder="What was frustrating yesterday"></TheTextarea>
@@ -10,10 +12,11 @@
   <TheTextarea placeholder="What are my daily goals"></TheTextarea>
   <br />
 
-  <backBtn></backBtn>
-  <continueBtn @click="setRandomStudent"></continueBtn>
-  <button @click="$router.push('HubView')">to Hub</button>
-  <saveBtn></saveBtn>
+  <backBtn v-if="currentStudentIndex !== 0" @click="setBack" />
+  <continueBtn
+    v-if="currentStudentIndex < getCurrentClassAttendees.length - 1"
+    @click="setNext"
+  />
 </template>
 
 <script>
@@ -27,27 +30,40 @@ export default {
     backBtn,
     continueBtn,
   },
+  data() {
+    return { currentStudentIndex: 0 };
+  },
   computed: {
     studentName() {
-      return this.$store.state.studentName;
+      return this.getCurrentClassAttendees[this.currentStudentIndex].githubName;
     },
     currentCLassName() {
       return this.$store.state.currentClass;
     },
+    getCurrentClassAttendees() {
+      return this.shuffle(this.$store.getters.getCurrentClassAttendees);
+    },
+    currentStep() {
+      return `${this.currentStudentIndex + 1}/${
+        this.getCurrentClassAttendees.length
+      }`;
+    },
   },
   methods: {
-    generateRandomNumber(n) {
-      return Math.floor(Math.random() * n);
+    shuffle(a) {
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
     },
-    setRandomStudent() {
-      const currentAttendees = this.$store.getters.getCurrentClassAttendees;
-      const randomNumber = this.generateRandomNumber(
-        currentAttendees.length - 1
-      );
-      this.$store.commit(
-        "setStudentName",
-        currentAttendees[randomNumber].githubName
-      );
+
+    setNext() {
+      this.currentStudentIndex = this.currentStudentIndex + 1;
+    },
+
+    setBack() {
+      this.currentStudentIndex = this.currentStudentIndex - 1;
     },
   },
 };
