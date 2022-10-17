@@ -27,6 +27,7 @@ export default createStore({
     knowledge: [""],
     checkout: [],
     checking: [],
+    studentName: "",
   },
   getters: {
     getUserByClass(state) {
@@ -62,6 +63,9 @@ export default createStore({
     },
     setKnowledge(state, value) {
       state.knowledge = value;
+    },
+    setStudentName(state, value) {
+      state.studentName = value;
     },
   },
   actions: {

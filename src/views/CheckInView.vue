@@ -1,7 +1,7 @@
 <template>
   <p>
     Name des Student:
-    {{ this.$store.getters.getCurrentClassAttendees[0].githubName }}
+    {{ studentName }}
   </p>
   <input type="checkbox" v-model="present" />
 
@@ -18,7 +18,7 @@
   <br />
 
   <backBtn></backBtn>
-  <continueBtn></continueBtn>
+  <continueBtn @click="setRandomStudent"></continueBtn>
   <button @click="$router.push('HubView')">zur Startseite</button>
   <saveBtn @click="save"></saveBtn>
 </template>
@@ -28,6 +28,7 @@ import TheTextarea from "@/components/TheTextarea.vue";
 import backBtn from "@/components/Button/backBtn.vue";
 import continueBtn from "@/components/Button/continueBtn.vue";
 import saveBtn from "@/components/Button/saveBtn.vue";
+
 export default {
   components: {
     TheTextarea,
@@ -41,6 +42,14 @@ export default {
       checking: [...this.$store.state.checking],
     };
   },
+  computed: {
+    studentName() {
+      return this.$store.state.studentName;
+    },
+    currentCLassName() {
+      return this.$store.state.currentClass;
+    },
+  },
   methods: {
     save() {
       const checkin = {
@@ -50,6 +59,19 @@ export default {
         goals: this.goals,
       };
       this.$store.commit("addUpdateCheckin", checkin);
+    },
+    generateRandomNumber(n) {
+      return Math.floor(Math.random() * n);
+    },
+    setRandomStudent() {
+      const currentAttendees = this.$store.getters.getCurrentClassAttendees;
+      const randomNumber = this.generateRandomNumber(
+        currentAttendees.length - 1
+      );
+      this.$store.commit(
+        "setStudentName",
+        currentAttendees[randomNumber].githubName
+      );
     },
   },
 };

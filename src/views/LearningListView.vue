@@ -12,6 +12,7 @@
   </template>
   <br />
   <saveBtn @click="save"></saveBtn>
+
   <backBtn @click="$router.push('LiveSessionView')"></backBtn>
   <continueBtn @click="$router.push('QuestionListView')"></continueBtn>
 </template>
@@ -23,6 +24,7 @@ import addBtn from "@/components/Button/addBtn.vue";
 import trashBtn from "@/components/Button/trashBtn.vue";
 import TheTextarea from "@/components/TheTextarea.vue";
 import saveBtn from "@/components/Button/saveBtn.vue";
+
 export default {
   components: {
     backBtn,

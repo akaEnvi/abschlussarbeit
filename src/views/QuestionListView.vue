@@ -23,6 +23,7 @@ import trashBtn from "@/components/Button/trashBtn.vue";
 import TheTextarea from "@/components/TheTextarea.vue";
 import backBtn from "@/components/Button/backBtn.vue";
 import saveBtn from "@/components/Button/saveBtn.vue";
+
 export default {
   components: {
     addBtn,
