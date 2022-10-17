@@ -10,15 +10,11 @@
   <button @click="$router.push('HubView')">to Hub</button>
 
   <br />
-  <TheTextarea
-    placeholder="What was frustrating yesterday"
-    v-model="problems"
-  ></TheTextarea>
+  <p>What was frustrating yesterday?</p>
+  <TheTextarea placeholder="say something..." v-model="problems"></TheTextarea>
   <br />
-  <TheTextarea
-    placeholder="What are my daily goals"
-    v-model="goals"
-  ></TheTextarea>
+  <p>What are my daily goals?</p>
+  <TheTextarea placeholder="say something..." v-model="goals"></TheTextarea>
   <br />
 
   <backBtn v-if="currentStudentIndex !== 0" @click="setBack" />
@@ -87,7 +83,6 @@ export default {
       this.save();
       this.$router.push("/HubView");
     },
-
     shuffle(a) {
       for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));

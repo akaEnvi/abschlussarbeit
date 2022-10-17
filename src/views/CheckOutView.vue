@@ -5,11 +5,14 @@
     {{ studentName }} <br />
     {{ currentStep }}
   </p>
+  <br />
+
   <button @click="$router.push('HubView')">to Hub</button>
 
   <br />
   <br />
-  <TheTextarea placeholder="Rating of the day"></TheTextarea>
+  <p>Rating of the day</p>
+  <TheTextarea placeholder="say something..."></TheTextarea>
   <br />
   <h3>How do I rate the day</h3>
   <p>(from "1" Why did I get up? to "5" Superior)</p>
@@ -34,26 +37,30 @@
     v-if="currentStudentIndex < getCurrentClassAttendees.length - 1"
     @click="setNext"
   />
-
-  <saveBtn></saveBtn>
+  <button
+    v-if="currentStudentIndex === getCurrentClassAttendees.length - 1"
+    @click="handleFinish"
+  >
+    Done and back
+  </button>
 </template>
 
 <script>
 import TheTextarea from "@/components/TheTextarea.vue";
 import continueBtn from "@/components/Button/continueBtn.vue";
 import backBtn from "@/components/Button/backBtn.vue";
-import saveBtn from "@/components/Button/saveBtn.vue";
 
 export default {
   components: {
     TheTextarea,
     continueBtn,
     backBtn,
-    saveBtn,
   },
   data() {
     return {
-      checkout: [...this.$store.state.checkout],
+      problems: "",
+      goals: "",
+      present: false,
       currentStudentIndex: 0,
     };
   },
@@ -75,9 +82,21 @@ export default {
   },
   methods: {
     save() {
-      this.$store.commit("setCheckout", [...this.checkout]);
+      const checkin = {
+        present: this.present,
+        student:
+          this.$store.getters.getCurrentClassAttendees[
+            this.currentStudentIndex
+          ],
+        problems: this.problems,
+        goals: this.goals,
+      };
+      this.$store.commit("addUpdateCheckin", checkin);
     },
-
+    handleFinish() {
+      this.save();
+      this.$router.push("/HubView");
+    },
     shuffle(a) {
       for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -85,12 +104,30 @@ export default {
       }
       return a;
     },
+    prepareFormFields() {
+      this.goals = "";
+      this.problems = "";
+
+      const currentStoreData =
+        this.$store.state.checking[this.currentStudentIndex];
+      this.goals = currentStoreData.goals;
+      this.problems = currentStoreData.problems;
+    },
+
     setNext() {
+      this.save();
       this.currentStudentIndex = this.currentStudentIndex + 1;
+      this.prepareFormFields();
     },
+
     setBack() {
+      this.save();
       this.currentStudentIndex = this.currentStudentIndex - 1;
+      this.prepareFormFields();
     },
+  },
+  beforeRouteLeave() {
+    this.save();
   },
 };
 </script>

@@ -17,14 +17,13 @@
       </option>
     </select>
   </div>
+  <br />
 
-  <br />
-  <!-- <OutputModerator></OutputModerator> -->
-  <br />
-  Moderator: {{ moderatorName }}
+  Moderator: {{ moderatorName }} <br />
   <button @click="setRandomModerator">
     <textBtn>Generate moderator</textBtn>
   </button>
+
   <br />
   <br />
   <button @click="$router.push('HubView')">
@@ -33,11 +32,9 @@
 </template>
 
 <script>
-// import OutputModerator from "@/components/OutputModerator.vue";
 import textBtn from "@/components/Button/textBtn.vue";
 export default {
   components: {
-    // OutputModerator,
     textBtn,
   },
   computed: {
