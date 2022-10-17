@@ -9,9 +9,10 @@
     ></TheTextarea>
 
     <trashBtn @click="trash(index)"></trashBtn>
-    <saveBtn @click="save"></saveBtn>
   </template>
   <br />
+  <saveBtn @click="save"></saveBtn>
+
   <backBtn @click="$router.push('LiveSessionView')"></backBtn>
   <continueBtn @click="$router.push('QuestionListView')"></continueBtn>
 </template>

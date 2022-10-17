@@ -29,11 +29,16 @@
   <TheTextarea placeholder="Roti reason"></TheTextarea>
   <br />
 
+
+  <continueBtn @click="setRandomStudent"></continueBtn>
+
+
   <backBtn v-if="currentStudentIndex !== 0" @click="setBack" />
   <continueBtn
     v-if="currentStudentIndex < getCurrentClassAttendees.length - 1"
     @click="setNext"
   />
+
   <saveBtn></saveBtn>
 </template>
 
@@ -51,7 +56,13 @@ export default {
     saveBtn,
   },
   data() {
+
+    return {
+      checkout: [...this.$store.state.checkout],
+    };
+
     return { currentStudentIndex: 0 };
+
   },
   computed: {
     studentName() {
@@ -70,6 +81,12 @@ export default {
     },
   },
   methods: {
+
+    save() {
+      this.$store.commit("setCheckout", [...this.checkout]);
+    },
+
+
     shuffle(a) {
       for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -79,6 +96,7 @@ export default {
     },
     setNext() {
       this.currentStudentIndex = this.currentStudentIndex + 1;
+
     },
     setBack() {
       this.currentStudentIndex = this.currentStudentIndex - 1;

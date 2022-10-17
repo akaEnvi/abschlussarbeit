@@ -10,11 +10,11 @@
     ></TheTextarea>
 
     <trashBtn @click="trash(index)"></trashBtn>
-    <saveBtn @click="save"></saveBtn>
   </template>
   <br />
+  <saveBtn @click="save"></saveBtn>
   <backBtn @click="$router.push('LearningListView')"></backBtn>
-  <button @click="$router.push('HubView')">to Hub</button>
+  <button @click="$router.push('HubView')">zur Startseite</button>
 </template>
 
 <script>
@@ -22,7 +22,6 @@ import addBtn from "@/components/Button/addBtn.vue";
 import trashBtn from "@/components/Button/trashBtn.vue";
 import TheTextarea from "@/components/TheTextarea.vue";
 import backBtn from "@/components/Button/backBtn.vue";
-
 import saveBtn from "@/components/Button/saveBtn.vue";
 
 export default {

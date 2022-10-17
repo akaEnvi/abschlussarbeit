@@ -25,6 +25,8 @@ export default createStore({
     currentClass: "",
     questions: [""],
     knowledge: [""],
+    checkout: [],
+    checking: [],
     studentName: "",
   },
   getters: {
@@ -36,6 +38,20 @@ export default createStore({
     },
   },
   mutations: {
+    addUpdateCheckin(state, value) {
+      const index = state.checking.findIndex((item) => {
+        return item.student.uid === value.student.uid;
+      });
+      if (index === -1) {
+        state.checking.push(value);
+      } else {
+        state.checking[index] = value;
+      }
+    },
+    setCheckout(state, value) {
+      state.checkout = value;
+    },
+
     setCurrentClass(state, value) {
       state.currentClass = value;
     },
