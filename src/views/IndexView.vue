@@ -34,15 +34,12 @@
 
 <script>
 // import OutputModerator from "@/components/OutputModerator.vue";
-
 import textBtn from "@/components/Button/textBtn.vue";
-
 export default {
   components: {
     // OutputModerator,
     textBtn,
   },
-
   computed: {
     getClasses() {
       return Object.keys(this.$store.getters.getUserByClass);
@@ -54,7 +51,6 @@ export default {
       return this.$store.state.currentClass;
     },
   },
-
   methods: {
     storeCurrentClass(event) {
       this.$store.commit("setCurrentClass", event.target.value);

@@ -28,21 +28,31 @@
 
   <backBtn></backBtn>
   <continueBtn></continueBtn>
-  <textBtn></textBtn>
+  <button @click="$router.push('HubView')">zur Startseite</button>
+  <saveBtn></saveBtn>
 </template>
 
 <script>
 import TheTextarea from "@/components/TheTextarea.vue";
 import continueBtn from "@/components/Button/continueBtn.vue";
 import backBtn from "@/components/Button/backBtn.vue";
-import textBtn from "@/components/Button/textBtn.vue";
-
+import saveBtn from "@/components/Button/saveBtn.vue";
 export default {
   components: {
     TheTextarea,
     continueBtn,
     backBtn,
-    textBtn,
+    saveBtn,
+  },
+  data() {
+    return {
+      checkout: [...this.$store.state.checkout],
+    };
+  },
+  methods: {
+    save() {
+      this.$store.commit("setCheckout", [...this.checkout]);
+    },
   },
 };
 </script>

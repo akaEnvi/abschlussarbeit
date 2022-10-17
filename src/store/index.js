@@ -24,6 +24,9 @@ export default createStore({
     usersByClass: [],
     currentClass: "",
     questions: [""],
+    knowledge: [""],
+    checkout: [],
+    checking: [],
   },
   getters: {
     getUserByClass(state) {
@@ -34,6 +37,20 @@ export default createStore({
     },
   },
   mutations: {
+    addUpdateCheckin(state, value) {
+      const index = state.checking.findIndex((item) => {
+        return item.student.uid === value.student.uid;
+      });
+      if (index === -1) {
+        state.checking.push(value);
+      } else {
+        state.checking[index] = value;
+      }
+    },
+    setCheckout(state, value) {
+      state.checkout = value;
+    },
+
     setCurrentClass(state, value) {
       state.currentClass = value;
     },
@@ -42,6 +59,9 @@ export default createStore({
     },
     setQuest(state, value) {
       state.questions = value;
+    },
+    setKnowledge(state, value) {
+      state.knowledge = value;
     },
   },
   actions: {
