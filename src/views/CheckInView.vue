@@ -4,7 +4,7 @@
     {{ studentName }}
   </p>
 
-  <br />
+  <br />np
   <TheTextarea placeholder="What was frustrating yesterday"></TheTextarea>
   <br />
   <TheTextarea placeholder="What are my daily goals"></TheTextarea>
