@@ -25,6 +25,7 @@ export default createStore({
     currentClass: "",
     questions: [""],
     knowledge: [""],
+    studentName: "",
   },
   getters: {
     getUserByClass(state) {
@@ -46,6 +47,9 @@ export default createStore({
     },
     setKnowledge(state, value) {
       state.knowledge = value;
+    },
+    setStudentName(state, value) {
+      state.studentName = value;
     },
   },
   actions: {

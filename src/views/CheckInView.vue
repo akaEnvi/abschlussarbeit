@@ -1,6 +1,7 @@
 <template>
   <p>
-    {{ this.$store.getters.getCurrentClassAttendees[0].githubName }}
+    Name des Student:
+    {{ studentName }}
   </p>
 
   <br />
@@ -10,7 +11,7 @@
   <br />
 
   <backBtn></backBtn>
-  <continueBtn></continueBtn>
+  <continueBtn @click="setRandomStudent"></continueBtn>
   <button @click="$router.push('HubView')">to Hub</button>
   <saveBtn></saveBtn>
 </template>
@@ -19,14 +20,35 @@
 import TheTextarea from "@/components/TheTextarea.vue";
 import backBtn from "@/components/Button/backBtn.vue";
 import continueBtn from "@/components/Button/continueBtn.vue";
-import saveBtn from "@/components/Button/saveBtn.vue";
 
 export default {
   components: {
     TheTextarea,
     backBtn,
     continueBtn,
-    saveBtn,
+  },
+  computed: {
+    studentName() {
+      return this.$store.state.studentName;
+    },
+    currentCLassName() {
+      return this.$store.state.currentClass;
+    },
+  },
+  methods: {
+    generateRandomNumber(n) {
+      return Math.floor(Math.random() * n);
+    },
+    setRandomStudent() {
+      const currentAttendees = this.$store.getters.getCurrentClassAttendees;
+      const randomNumber = this.generateRandomNumber(
+        currentAttendees.length - 1
+      );
+      this.$store.commit(
+        "setStudentName",
+        currentAttendees[randomNumber].githubName
+      );
+    },
   },
 };
 </script>
