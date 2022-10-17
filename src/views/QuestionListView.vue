@@ -1,12 +1,21 @@
 <template>
   <h1>Questions</h1>
   <addBtn></addBtn>
+  <button @click="add">add</button>
+
   <br />
-  <TheTextarea placeholder="Questions"></TheTextarea>
-  <trashBtn></trashBtn>
+  <template v-for="(question, index) in questions" :key="index">
+    <TheTextarea
+      placeholder="Questions"
+      v-model="questions[index]"
+    ></TheTextarea>
+    <button @click="trash(index)">trash</button>
+    <trashBtn></trashBtn>
+  </template>
   <br />
   <backBtn></backBtn>
   <continueBtn></continueBtn>
+  <button @click="save">test</button>
   <textBtn></textBtn>
 </template>
 
@@ -26,6 +35,22 @@ export default {
     backBtn,
     continueBtn,
     textBtn,
+  },
+  data() {
+    return {
+      questions: [...this.$store.state.questions],
+    };
+  },
+  methods: {
+    save() {
+      this.$store.commit("setQuest", [...this.questions]);
+    },
+    add() {
+      this.questions.push("");
+    },
+    trash(index) {
+      this.questions.splice(index, 1);
+    },
   },
 };
 </script>
