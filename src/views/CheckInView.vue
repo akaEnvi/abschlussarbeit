@@ -1,6 +1,5 @@
 <template>
   <p>
-    Name des Student:
     {{ this.$store.getters.getCurrentClassAttendees[0].githubName }}
   </p>
 
@@ -12,21 +11,22 @@
 
   <backBtn></backBtn>
   <continueBtn></continueBtn>
-  <textBtn></textBtn>
+  <button @click="$router.push('HubView')">to Hub</button>
+  <saveBtn></saveBtn>
 </template>
 
 <script>
 import TheTextarea from "@/components/TheTextarea.vue";
 import backBtn from "@/components/Button/backBtn.vue";
 import continueBtn from "@/components/Button/continueBtn.vue";
-import textBtn from "@/components/Button/textBtn.vue";
+import saveBtn from "@/components/Button/saveBtn.vue";
 
 export default {
   components: {
     TheTextarea,
     backBtn,
     continueBtn,
-    textBtn,
+    saveBtn,
   },
 };
 </script>

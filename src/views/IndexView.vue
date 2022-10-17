@@ -34,7 +34,6 @@
 
 <script>
 // import OutputModerator from "@/components/OutputModerator.vue";
-
 import textBtn from "@/components/Button/textBtn.vue";
 
 export default {
