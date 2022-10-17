@@ -1,8 +1,9 @@
 <template>
   <h1>Attendance check</h1>
   <br />
-  <input type="checkbox" name="test" id="" />
-  <label for="test">Muss geklärt werden</label>
+  <p>
+    {{ getCurrentClass }}
+  </p>
   <br />
   <button @click="$router.push('LearningListView')">
     <textBtn>Feedback</textBtn>
@@ -19,6 +20,14 @@ export default {
   components: {
     textBtn,
     backBtn,
+  },
+  computed: {
+    studentName() {
+      return this.$store.state.studentName;
+    },
+    currentCLassName() {
+      return this.$store.state.currentClass;
+    },
   },
 };
 </script>
