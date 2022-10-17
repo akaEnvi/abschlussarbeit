@@ -21,32 +21,35 @@
   ></TheTextarea>
   <br />
 
-  <saveBtn @click="save"></saveBtn>
-
   <backBtn v-if="currentStudentIndex !== 0" @click="setBack" />
   <continueBtn
     v-if="currentStudentIndex < getCurrentClassAttendees.length - 1"
     @click="setNext"
   />
+  <button
+    v-if="currentStudentIndex === getCurrentClassAttendees.length - 1"
+    @click="handleFinish"
+  >
+    Done and back
+  </button>
 </template>
 
 <script>
 import TheTextarea from "@/components/TheTextarea.vue";
 import backBtn from "@/components/Button/backBtn.vue";
 import continueBtn from "@/components/Button/continueBtn.vue";
-import saveBtn from "@/components/Button/saveBtn.vue";
 
 export default {
   components: {
     TheTextarea,
     backBtn,
     continueBtn,
-    saveBtn,
   },
   data() {
     return {
+      problems: "",
+      goals: "",
       present: false,
-      checking: [...this.$store.state.checking],
       currentStudentIndex: 0,
     };
   },
@@ -70,11 +73,19 @@ export default {
     save() {
       const checkin = {
         present: this.present,
-        student: this.$store.getters.getCurrentClassAttendees[0],
+        student:
+          this.$store.getters.getCurrentClassAttendees[
+            this.currentStudentIndex
+          ],
         problems: this.problems,
         goals: this.goals,
       };
       this.$store.commit("addUpdateCheckin", checkin);
+    },
+
+    handleFinish() {
+      this.save();
+      this.$router.push("/HubView");
     },
 
     shuffle(a) {
@@ -85,13 +96,30 @@ export default {
       return a;
     },
 
+    prepareFormFields() {
+      this.goals = "";
+      this.problems = "";
+
+      const currentStoreData =
+        this.$store.state.checking[this.currentStudentIndex];
+      this.goals = currentStoreData.goals;
+      this.problems = currentStoreData.problems;
+    },
+
     setNext() {
+      this.save();
       this.currentStudentIndex = this.currentStudentIndex + 1;
+      this.prepareFormFields();
     },
 
     setBack() {
+      this.save();
       this.currentStudentIndex = this.currentStudentIndex - 1;
+      this.prepareFormFields();
     },
+  },
+  beforeRouteLeave() {
+    this.save();
   },
 };
 </script>
