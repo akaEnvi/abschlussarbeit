@@ -23,6 +23,7 @@ export default createStore({
     users: [],
     usersByClass: [],
     currentClass: "",
+    questions: [""],
   },
   getters: {
     getUserByClass(state) {
@@ -38,6 +39,9 @@ export default createStore({
     },
     setModeratorName(state, value) {
       state.moderatorName = value;
+    },
+    setQuest(state, value) {
+      state.questions = value;
     },
   },
   actions: {
