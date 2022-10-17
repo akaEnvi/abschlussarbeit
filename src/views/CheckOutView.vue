@@ -1,41 +1,54 @@
 <template>
-  <br />
-  <p>
-    Name des Student:
-    {{ studentName }} <br />
-    {{ currentStep }}
-  </p>
-  <button @click="$router.push('HubView')">to Hub</button>
+  <h1>Check Out</h1>
+  <table class="checkin-table">
+    <tr>
+      <th>Name des Moderators:</th>
+      <th>Schüler gesamt</th>
+    </tr>
+    <tr>
+      <td>{{ studentName }}</td>
 
-  <br />
-  <br />
-  <TheTextarea placeholder="Rating of the day"></TheTextarea>
-  <br />
-  <h3>How do I rate the day</h3>
-  <p>(from "1" Why did I get up? to "5" Superior)</p>
-  <input type="radio" name="note_inhalt" value="Warum bin ich aufgestanden?" />
-  1 |
-  <input type="radio" name="note_inhalt" value="Oh je!" />
-  2 |
-  <input type="radio" name="note_inhalt" value="Ganz OK!" />
-  3 |
-  <input type="radio" name="note_inhalt" value="Lief nach Plan" />
-  4 |
-  <input type="radio" name="note_inhalt" value="Überragend" />
-  5 |
-  <br />
-  <br />
+      <td>{{ currentStep }}</td>
+    </tr>
+  </table>
 
-  <TheTextarea placeholder="Roti reason"></TheTextarea>
-  <br />
+  <div class="checkin-content">
+    <button @click="$router.push('HubView')">to Hub</button>
 
-  <backBtn v-if="currentStudentIndex !== 0" @click="setBack" />
-  <continueBtn
-    v-if="currentStudentIndex < getCurrentClassAttendees.length - 1"
-    @click="setNext"
-  />
+    <br />
+    <br />
+    <TheTextarea placeholder="Rating of the day"></TheTextarea>
+    <br />
+    <h3>How do I rate the day</h3>
+    <p>(from "1" Why did I get up? to "5" Superior)</p>
+    <input
+      type="radio"
+      name="note_inhalt"
+      value="Warum bin ich aufgestanden?"
+    />
+    1 |
+    <input type="radio" name="note_inhalt" value="Oh je!" />
+    2 |
+    <input type="radio" name="note_inhalt" value="Ganz OK!" />
+    3 |
+    <input type="radio" name="note_inhalt" value="Lief nach Plan" />
+    4 |
+    <input type="radio" name="note_inhalt" value="Überragend" />
+    5 |
+    <br />
+    <br />
 
-  <saveBtn></saveBtn>
+    <TheTextarea placeholder="Roti reason"></TheTextarea>
+    <br />
+
+    <backBtn v-if="currentStudentIndex !== 0" @click="setBack" />
+    <continueBtn
+      v-if="currentStudentIndex < getCurrentClassAttendees.length - 1"
+      @click="setNext"
+    />
+
+    <saveBtn></saveBtn>
+  </div>
 </template>
 
 <script>
