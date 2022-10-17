@@ -9,7 +9,6 @@
 
   <button @click="$router.push('HubView')">to Hub</button>
 
-
   <br />
   <TheTextarea
     placeholder="What was frustrating yesterday"
@@ -22,10 +21,6 @@
   ></TheTextarea>
   <br />
 
-
-
-  <continueBtn @click="setRandomStudent"></continueBtn>
-
   <saveBtn @click="save"></saveBtn>
 
   <backBtn v-if="currentStudentIndex !== 0" @click="setBack" />
@@ -33,7 +28,6 @@
     v-if="currentStudentIndex < getCurrentClassAttendees.length - 1"
     @click="setNext"
   />
-
 </template>
 
 <script>
@@ -53,10 +47,8 @@ export default {
     return {
       present: false,
       checking: [...this.$store.state.checking],
+      currentStudentIndex: 0,
     };
-  },
-  data() {
-    return { currentStudentIndex: 0 };
   },
   computed: {
     studentName() {
@@ -75,7 +67,6 @@ export default {
     },
   },
   methods: {
-
     save() {
       const checkin = {
         present: this.present,
@@ -96,7 +87,6 @@ export default {
 
     setNext() {
       this.currentStudentIndex = this.currentStudentIndex + 1;
-
     },
 
     setBack() {
