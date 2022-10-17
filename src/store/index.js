@@ -27,6 +27,7 @@ export default createStore({
     knowledge: [""],
     checkout: [],
     checking: [],
+    liveSessionPresence: [],
     studentName: "",
   },
   getters: {
@@ -34,10 +35,19 @@ export default createStore({
       return state.usersByClass;
     },
     getCurrentClassAttendees(state) {
-      return state.usersByClass[state.currentClass].attendees;
+      return state.currentClass
+        ? state.usersByClass[state.currentClass].attendees
+        : "";
     },
   },
   mutations: {
+    setLiveSessionPresence(state, value) {
+      state.liveSessionPresence = value;
+    },
+    updateSingleLiveSessionPresence(state, index) {
+      state.liveSessionPresence[index].present =
+        !state.liveSessionPresence[index].present;
+    },
     addUpdateCheckin(state, value) {
       const index = state.checking.findIndex((item) => {
         return item.student.uid === value.student.uid;
@@ -85,6 +95,7 @@ export default createStore({
         }
         ctx.state.users = attendeeData;
         ctx.state.usersByClass = splitUserByClasses(attendeeData);
+        console.log(ctx.getters.getCurrentClassAttendees);
       } catch (error) {
         // this.errorMessage = error;
         console.error("There was an error!", error);
