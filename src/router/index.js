@@ -6,6 +6,7 @@ import HubView from "@/views/HubView.vue";
 import LiveSessionView from "@/views/LiveSessionView.vue";
 import LearningListView from "@/views/LearningListView.vue";
 import QuestionListView from "@/views/QuestionListView.vue";
+import ExportView from "@/views/ExportView.vue";
 
 const routes = [
   {
@@ -48,6 +49,11 @@ const routes = [
     path: "/HubView",
     name: "HubView",
     component: HubView,
+  },
+  {
+    path: "/ExportView",
+    name: "ExportView",
+    component: ExportView,
   },
 ];
 

@@ -101,6 +101,14 @@ export default createStore({
         console.error("There was an error!", error);
       }
     },
+    reset(ctx) {
+      ctx.state.checking = [];
+      ctx.state.liveSessionPresence = [];
+      ctx.state.checkout = [];
+      ctx.state.knowledge = [];
+      ctx.state.questions = [];
+      ctx.state.moderatorName = "";
+    },
   },
   modules: {},
 });

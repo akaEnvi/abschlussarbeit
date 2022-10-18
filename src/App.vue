@@ -1,3 +1,4 @@
+<template>
   <div class="header">
     <nav>
       <ul>
@@ -28,6 +29,9 @@
             </div>
             <div><router-link to="/TestView">Test</router-link></div>
           </div>
+          <div>
+            <div><router-link to="/ExportView">Export</router-link></div>
+          </div>
         </li>
       </ul>
     </nav>
@@ -38,7 +42,6 @@
     <router-view />
   </div>
   <div class="main-content"><h1>Abschlussproject BC Klasse Juni 2022</h1></div>
-
 </template>
 
 <script>
