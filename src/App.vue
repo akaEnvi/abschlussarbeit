@@ -1,4 +1,3 @@
-<template>
   <div class="header">
     <nav>
       <ul>
@@ -39,6 +38,7 @@
     <router-view />
   </div>
   <div class="main-content"><h1>Abschlussproject BC Klasse Juni 2022</h1></div>
+
 </template>
 
 <script>

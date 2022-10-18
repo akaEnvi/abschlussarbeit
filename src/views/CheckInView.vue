@@ -15,8 +15,6 @@
   <div class="checkin-content">
     <input type="checkbox" v-model="present" />
 
-    <button @click="$router.push('HubView')">to Hub</button>
-
     <TheTextarea
       placeholder="What was frustrating yesterday"
       v-model="problems"
@@ -26,7 +24,7 @@
       placeholder="What are my daily goals"
       v-model="goals"
     ></TheTextarea>
-
+<button @click="$router.push('HubView')">to Hub</button>
     <div>
       <backBtn v-if="currentStudentIndex !== 0" @click="setBack" />
       <continueBtn
@@ -96,7 +94,6 @@ export default {
       this.save();
       this.$router.push("/HubView");
     },
-
     shuffle(a) {
       for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
