@@ -102,12 +102,15 @@ export default createStore({
       }
     },
     reset(ctx) {
+      ctx.state.moderatorName = "";
       ctx.state.checking = [];
       ctx.state.liveSessionPresence = [];
       ctx.state.checkout = [];
       ctx.state.knowledge = [];
       ctx.state.questions = [];
       ctx.state.moderatorName = "";
+      ctx.state.questions = "";
+      ctx.state.knowledge = "";
     },
   },
   modules: {},
