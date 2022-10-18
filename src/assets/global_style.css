@@ -21,8 +21,15 @@ body {
 
 h1 {
   color: var(--clr-primary);
-  font-size: 16px;
-  padding: 40px 0 60px 0;
+  font-size: 24px;
+  padding: 0px 0 30px 0;
+  text-transform: uppercase;
+}
+
+h2 {
+  color: var(--clr-primary);
+  font-size: 20px;
+
   text-transform: uppercase;
 }
 
@@ -62,9 +69,14 @@ h1 {
 
 .checkin-table {
   width: 100%;
+  display: flex;
 }
-td {
-  text-align: center;
+table {
+  margin-block: 0;
+}
+th {
+  width: 200px;
+  text-align: left;
 }
 
 .checkin-content {
@@ -74,6 +86,20 @@ td {
   justify-content: center;
 }
 
+.checkout-textarea,
+.checkin-textarea {
+  width: 550px;
+  margin-block: 20px;
+}
+
+.was-present {
+  display: flex;
+  flex-direction: row;
+}
+
+.select-input {
+  padding: 8px 12px;
+}
 button {
   all: unset;
   cursor: pointer;
@@ -135,6 +161,14 @@ nav ul li ul li {
   padding: 8px 0 20px 0;
 }
 
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+li {
+  padding: 10px 0 10px 12px;
+}
+
 .router-links {
   display: flex;
   flex-direction: columne;
@@ -148,10 +182,23 @@ nav ul li ul li {
   font-weight: 600;
   text-transform: uppercase;
   padding: 5px 0 0 0;
+  margin-left: 50px;
 }
 
 select {
   all: unset;
   border: 2px solid var(--clr-primary);
   padding: 8px 20px;
+}
+
+.roti-radio {
+  display: flex;
+}
+
+input[type="radio"] {
+  border: 1px solid var(--clr-primary);
+}
+
+.radio-button {
+  padding: 10px 10px 10px 0;
 }

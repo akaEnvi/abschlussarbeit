@@ -1,20 +1,22 @@
 <template>
   <h1>Check IN</h1>
-  <table class="checkin-table">
-    <tr>
-      <th>Name des Moderators:</th>
-      <th>Schüler gesamt</th>
-    </tr>
-    <tr>
-      <td>{{ studentName }}</td>
-
-      <td>{{ currentStep }}</td>
-    </tr>
-  </table>
-
+  <div class="checkin-table">
+    <table>
+      <tr>
+        <th>Attendee name</th>
+        <th>Attendees</th>
+      </tr>
+      <tr>
+        <td>{{ studentName }}</td>
+        <td>{{ currentStep }}</td>
+      </tr>
+      <tr>
+        <td>is present<input type="checkbox" v-model="present" /></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
   <div class="checkin-content">
-    <input type="checkbox" v-model="present" />
-
     <TheTextarea
       placeholder="What was frustrating yesterday"
       v-model="problems"
@@ -24,19 +26,27 @@
       placeholder="What are my daily goals"
       v-model="goals"
     ></TheTextarea>
-    <button @click="$router.push('HubView')">to Hub</button>
     <div>
-      <backBtn v-if="currentStudentIndex !== 0" @click="setBack" />
       <continueBtn
         v-if="currentStudentIndex < getCurrentClassAttendees.length - 1"
         @click="setNext"
+      /><backBtn
+        v-if="
+          currentStudentIndex !== 0 &&
+          currentStudentIndex < getCurrentClassAttendees.length - 1
+        "
+        @click="setBack"
       />
+
       <button
         v-if="currentStudentIndex === getCurrentClassAttendees.length - 1"
         @click="handleFinish"
       >
         Done and back
       </button>
+    </div>
+    <div>
+      <button @click="$router.push('HubView')">to Hub</button>
     </div>
   </div>
 </template>

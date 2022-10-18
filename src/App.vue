@@ -4,31 +4,19 @@
       <ul>
         <li>
           <div class="burger-menu">
-            <img src="@/assets/list.svg" class="burger-menu-icon" />
             <div class="headerline">Cooding Bootcamp Europe</div>
           </div>
         </li>
         <li>
           <div class="router-links">
             <div><router-link to="/">Index</router-link></div>
-            <div><router-link to="/HubView">Hub</router-link></div>
-            <div><router-link to="/CheckInView">CheckIn</router-link></div>
-            <div>
-              <router-link to="/CheckOutView">CheckOut</router-link>
-            </div>
-
-            <div>
-              <router-link to="/LiveSessionView">Live Session</router-link>
-            </div>
-
             <div>
               <router-link to="/LearningListView">Learning</router-link>
             </div>
             <div>
               <router-link to="/QuestionListView">Questions</router-link>
             </div>
-          </div>
-          <div>
+
             <div><router-link to="/ExportView">Export</router-link></div>
           </div>
         </li>

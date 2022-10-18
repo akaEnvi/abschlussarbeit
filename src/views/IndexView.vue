@@ -1,11 +1,7 @@
 <template>
-  <div>
-    <TheDropDown />
-  </div>
-
   <h1>Calendar week presenter</h1>
 
-  <div>
+  <div class="select-input">
     <select @change="storeCurrentClass" id="testSelect1">
       <option value="">select class</option>
       <option
@@ -17,9 +13,7 @@
       </option>
     </select>
   </div>
-  <br />
-
-  Moderator: {{ moderatorName }} <br />
+  <div class="select-input">Moderator: {{ moderatorName }} <br /></div>
   <button @click="setRandomModerator">
     <textBtn>Generate moderator</textBtn>
   </button>

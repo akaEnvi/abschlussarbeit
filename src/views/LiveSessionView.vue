@@ -1,9 +1,8 @@
 <template>
   <h1>Attendance check</h1>
-  <br />
-  <p>
+  <h2>
     {{ getCurrentClass }}
-  </p>
+  </h2>
   <ul>
     <li
       v-for="(currentAttendee, index) of getCurrentClassAttendees"
@@ -17,19 +16,19 @@
   <button @click="$router.push('LearningListView')">
     <textBtn>Feedback</textBtn>
   </button>
-  <br />
-  <backBtn @click="$router.push('HubView')"></backBtn>
+  <div>
+    <button @click="$router.push('HubView')">to Hub</button>
+  </div>
 </template>
 
 <script>
 import textBtn from "@/components/Button/textBtn.vue";
-import backBtn from "@/components/Button/backBtn.vue";
+
 import { mapGetters } from "vuex";
 
 export default {
   components: {
     textBtn,
-    backBtn,
   },
   computed: {
     ...mapGetters(["getCurrentClassAttendees"]),

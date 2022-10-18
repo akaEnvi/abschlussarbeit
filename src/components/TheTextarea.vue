@@ -1,5 +1,6 @@
 <template>
   <textarea
+    class="checkin-textarea"
     placeholder="test"
     rows="5"
     :value="modelValue"
