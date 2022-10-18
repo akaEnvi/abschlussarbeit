@@ -12,6 +12,10 @@
     <textBtn>Check Out</textBtn>
   </button>
   <br />
+  <button @click="$router.push('ExportView')">
+    <textBtn>Export</textBtn>
+  </button>
+  <br />
 
   <backBtn @click="$router.push('/')"></backBtn>
 </template>

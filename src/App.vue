@@ -27,7 +27,6 @@
             <div>
               <router-link to="/QuestionListView">Questions</router-link>
             </div>
-            <div><router-link to="/TestView">Test</router-link></div>
           </div>
           <div>
             <div><router-link to="/ExportView">Export</router-link></div>
