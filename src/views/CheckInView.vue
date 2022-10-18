@@ -1,37 +1,44 @@
 <template>
-  <p>
-    Name des Student:
-    {{ studentName }} <br />
-    {{ currentStep }}
-  </p>
+  <h1>Check IN</h1>
+  <table class="checkin-table">
+    <tr>
+      <th>Name des Moderators:</th>
+      <th>Schüler gesamt</th>
+    </tr>
+    <tr>
+      <td>{{ studentName }}</td>
 
-  <input type="checkbox" v-model="present" />
+      <td>{{ currentStep }}</td>
+    </tr>
+  </table>
 
-  <button @click="$router.push('HubView')">to Hub</button>
+  <div class="checkin-content">
+    <input type="checkbox" v-model="present" />
 
-  <br />
-  <TheTextarea
-    placeholder="What was frustrating yesterday"
-    v-model="problems"
-  ></TheTextarea>
-  <br />
-  <TheTextarea
-    placeholder="What are my daily goals"
-    v-model="goals"
-  ></TheTextarea>
-  <br />
+    <TheTextarea
+      placeholder="What was frustrating yesterday"
+      v-model="problems"
+    ></TheTextarea>
 
-  <backBtn v-if="currentStudentIndex !== 0" @click="setBack" />
-  <continueBtn
-    v-if="currentStudentIndex < getCurrentClassAttendees.length - 1"
-    @click="setNext"
-  />
-  <button
-    v-if="currentStudentIndex === getCurrentClassAttendees.length - 1"
-    @click="handleFinish"
-  >
-    Done and back
-  </button>
+    <TheTextarea
+      placeholder="What are my daily goals"
+      v-model="goals"
+    ></TheTextarea>
+<button @click="$router.push('HubView')">to Hub</button>
+    <div>
+      <backBtn v-if="currentStudentIndex !== 0" @click="setBack" />
+      <continueBtn
+        v-if="currentStudentIndex < getCurrentClassAttendees.length - 1"
+        @click="setNext"
+      />
+      <button
+        v-if="currentStudentIndex === getCurrentClassAttendees.length - 1"
+        @click="handleFinish"
+      >
+        Done and back
+      </button>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -87,7 +94,6 @@ export default {
       this.save();
       this.$router.push("/HubView");
     },
-
     shuffle(a) {
       for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));

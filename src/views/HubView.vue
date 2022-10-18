@@ -1,4 +1,5 @@
 <template>
+  <h1>HUB</h1>
   <button @click="$router.push('CheckInView')">
     <textBtn>Check In</textBtn>
   </button>

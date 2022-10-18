@@ -3,13 +3,155 @@
   --clr-primary-inactiv: #6a1cc36e;
   --clr-secondary: #8849cf;
   --clr-surface: #fbfbfb;
+  --clr-app: #999;
   --clr-text: hsla(0, 0%, 0%, 0.87);
 }
 
+html {
+  background-color: var(--clr-app);
+}
 body {
   display: block;
   width: 650px;
+  height: 100%;
   margin: auto;
   color: var(--clr-text);
   background-color: var(--clr-surface);
+}
+
+h1 {
+  color: var(--clr-primary);
+  font-size: 16px;
+  padding: 40px 0 60px 0;
+  text-transform: uppercase;
+}
+
+.header {
+  background-color: var(--clr-primary);
+  width: 650px;
+  position: relative;
+  box-shadow: 0 15px var(--clr-secondary);
+}
+
+.header2 {
+  position: absolute;
+  z-index: 10;
+  width: 650px;
+  height: 20px;
+  background: var(--clr-primary);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: rotate(180deg);
+}
+
+.header3 {
+  position: absolute;
+  z-index: 0;
+  width: 650px;
+  height: 20px;
+  margin-top: 14px;
+  box-shadow: 0 -15px var(--clr-secondary);
+  background: var(--clr-secondary);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: rotate(180deg);
+}
+
+.main-content {
+  padding-left: 35px;
+  padding-block: 70px;
+}
+
+.checkin-table {
+  width: 100%;
+}
+td {
+  text-align: center;
+}
+
+.checkin-content {
+  padding: 40px 32px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  color: var(--clr-primary);
+  border: 2px solid var(--clr-primary);
+  border-radius: 2px;
+  box-shadow: 4px 4px 2px var(--clr-primary);
+  padding: 8px 20px;
+  margin: 12px;
+}
+
+button:hover {
+  color: var(--clr-surface);
+  background-color: var(--clr-primary);
+}
+
+textarea {
+  all: unset;
+  border: 2px solid var(--clr-primary);
+  font-size: 14px;
+}
+
+.burger-menu {
+  display: flex;
+}
+
+.burger-menu > img {
+  padding: 0 28px 0 0;
+}
+
+nav {
+  padding: 40px 0 15px 32px;
+}
+
+nav ul {
+  padding: 0;
+  list-style: none;
+  transition-duration: 500ms;
+}
+
+nav ul li {
+  padding: 0 0 28px 0;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav ul li a {
+  color: var(--clr-surface);
+  text-decoration: none;
+}
+
+nav ul li > li {
+  display: none;
+}
+
+nav ul li ul li {
+  padding: 8px 0 20px 0;
+}
+
+.router-links {
+  display: flex;
+  flex-direction: columne;
+  justify-content: space-around;
+  margin-left: -30px;
+}
+
+.headerline {
+  color: var(--clr-surface);
+  font-size: xx-large;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 5px 0 0 0;
+}
+
+select {
+  all: unset;
+  border: 2px solid var(--clr-primary);
+  padding: 8px 20px;
 }
