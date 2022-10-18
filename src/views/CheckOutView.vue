@@ -40,14 +40,19 @@
 
     <TheTextarea placeholder="Roti reason"></TheTextarea>
     <br />
-
+  </div>
+  <div>
     <backBtn v-if="currentStudentIndex !== 0" @click="setBack" />
     <continueBtn
       v-if="currentStudentIndex < getCurrentClassAttendees.length - 1"
       @click="setNext"
     />
-
-    <saveBtn></saveBtn>
+    <button
+      v-if="currentStudentIndex === getCurrentClassAttendees.length - 1"
+      @click="handleFinish"
+    >
+      Done and back
+    </button>
   </div>
 </template>
 
