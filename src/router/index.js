@@ -50,6 +50,11 @@ const routes = [
     name: "HubView",
     component: HubView,
   },
+  {
+    path: "/ExportView",
+    name: "ExportView",
+    component: ExportView,
+  },
 ];
 
 const router = createRouter({

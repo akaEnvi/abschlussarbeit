@@ -50,6 +50,7 @@ export default {
   },
   methods: {
     storeCurrentClass(event) {
+      this.$store.dispatch("reset");
       this.$store.commit("setCurrentClass", event.target.value);
     },
     generateRandomNumber(n) {

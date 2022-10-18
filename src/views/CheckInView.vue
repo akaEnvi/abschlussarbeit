@@ -24,7 +24,7 @@
       placeholder="What are my daily goals"
       v-model="goals"
     ></TheTextarea>
-<button @click="$router.push('HubView')">to Hub</button>
+    <button @click="$router.push('HubView')">to Hub</button>
     <div>
       <backBtn v-if="currentStudentIndex !== 0" @click="setBack" />
       <continueBtn
@@ -105,11 +105,20 @@ export default {
     prepareFormFields() {
       this.goals = "";
       this.problems = "";
-
+      console.log(this.$store.state.checking);
       const currentStoreData =
         this.$store.state.checking[this.currentStudentIndex];
-      this.goals = currentStoreData.goals;
-      this.problems = currentStoreData.problems;
+      console.log(currentStoreData);
+      if (!currentStoreData) {
+        return;
+      }
+
+      if (currentStoreData.goals) {
+        this.goals = currentStoreData.goals;
+      }
+      if (currentStoreData.problems) {
+        this.problems = currentStoreData.problems;
+      }
     },
 
     setNext() {

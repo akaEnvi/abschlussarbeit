@@ -1,18 +1,4 @@
-<<<<<<< HEAD
 <template>
-  <nav>
-    <router-link to="/">Index</router-link> |
-    <router-link to="/HubView">Hub</router-link> |
-    <router-link to="/CheckInView">CheckIn</router-link> |
-    <router-link to="/CheckOutView">CheckOut</router-link> |
-    <router-link to="/LiveSessionView">Live Session</router-link> |
-    <router-link to="/LearningListView">Learning</router-link> |
-    <router-link to="/QuestionListView">Questions</router-link> |
-    <router-link to="/TestView">Test</router-link> |
-    <router-link to="/ExportView">Export</router-link> |
-  </nav>
-  <router-view />
-=======
   <div class="header">
     <nav>
       <ul>
@@ -43,6 +29,9 @@
             </div>
             <div><router-link to="/TestView">Test</router-link></div>
           </div>
+          <div>
+            <div><router-link to="/ExportView">Export</router-link></div>
+          </div>
         </li>
       </ul>
     </nav>
@@ -53,8 +42,6 @@
     <router-view />
   </div>
   <div class="main-content"><h1>Abschlussproject BC Klasse Juni 2022</h1></div>
-
->>>>>>> f3dabc5ab270966a69a2d5319ab3f58054389e77
 </template>
 
 <script>
