@@ -8,6 +8,7 @@
     <router-link to="/LearningListView">Learning</router-link> |
     <router-link to="/QuestionListView">Questions</router-link> |
     <router-link to="/TestView">Test</router-link> |
+    <router-link to="/ExportView">Export</router-link> |
   </nav>
   <router-view />
 </template>
