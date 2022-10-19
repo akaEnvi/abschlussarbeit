@@ -93,7 +93,7 @@ export default {
         problems: this.problems,
         goals: this.goals,
       };
-      this.$store.commit("addUpdateCheckin", checkin);
+      this.$store.commit("addUpdateCheckIn", checkin);
     },
 
     handleFinish() {
@@ -112,9 +112,10 @@ export default {
       this.goals = "";
       this.problems = "";
 
+
       this.present = "false";
       const currentStoreData =
-        this.$store.state.checking[this.currentStudentIndex];
+        this.$store.state.checkIn[this.currentStudentIndex];
 
 
       console.log(this.$store.state.checkIn);
@@ -122,11 +123,9 @@ export default {
         this.$store.state.checkIn[this.currentStudentIndex];
       console.log(currentStoreData);
 
-      this.present = "false";
-      console.log(this.$store.state.checking);
-      const currentStoreData =
-        this.$store.state.checking[this.currentStudentIndex];
 
+      this.present = "false";
+      const currentStoreData =
 
       if (!currentStoreData) {
         return;

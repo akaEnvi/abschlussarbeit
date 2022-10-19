@@ -10,6 +10,7 @@
     >
       <input type="checkbox" @change="storePresence(index)" />
       {{ currentAttendee.githubName }}
+      <!-- '<span class="fulltime">{{ currentAttendee.fulltime }}</span>' -->
     </li>
   </ul>
   <br />
