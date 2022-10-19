@@ -18,60 +18,68 @@
   </div>
 
   <div class="checkin-content">
-    <TheTextarea
-      placeholder="Rating of the day"
-      v-model="problems"
-    ></TheTextarea>
+
+    <p>Rating of the day:</p>
+    <TheTextarea placeholder="say something" v-model="problems"></TheTextarea>
+
 
     <h2>How do I rate the day</h2>
-    <p>(from "1" Why did I get up? to "5" Superior)</p>
+    <p>(from 1⭐ Why did I get up? to 5⭐ Superior)</p>
     <div class="roti-radio">
       <label for="radio-button" class="radio-button"
         ><input
+          v-model="rotiValue"
           type="radio"
           name="note_inhalt"
           value="Warum bin ich aufgestanden?"
-          id="roadio-button"
+          id="radio-button"
         />
-        1 Star</label
-      >
+        <span class="star">⭐</span>
+      </label>
+
       <label for="radio-button2" class="radio-button">
         <input
+          v-model="rotiValue"
           type="radio"
           name="note_inhalt"
           value="Oh je!"
-          id="roadio-button2"
+          id="radio-button2"
         />
-        2 Stars</label
-      ><label for="radio-button3" class="radio-button">
+        ⭐⭐</label
+      >
+
+      <label for="radio-button3" class="radio-button">
         <input
+          v-model="rotiValue"
           type="radio"
           name="note_inhalt"
           value="Ganz OK!"
-          id="roadio-button3"
-        />3 Stars</label
+          id="radio-button3"
+        />⭐⭐⭐</label
       >
       <label for="radio-button4" class="radio-button">
         <input
+          v-model="rotiValue"
           type="radio"
           name="note_inhalt"
           value="Lief nach Plan"
-          id="roadio-button4"
+          id="radio-button4"
         />
-        4 Stars</label
+        ⭐⭐⭐⭐</label
       >
       <label for="radio-button5" class="radio-button">
         <input
+          v-model="rotiValue"
           type="radio"
           name="note_inhalt"
           value="Überragend"
-          id="roadio-button5"
+          id="radio-button5"
         />
-        5 Stars</label
+        ⭐⭐⭐⭐⭐</label
       >
     </div>
 
-    <TheTextarea placeholder="Roti reason" v-model="goals"></TheTextarea>
+    <TheTextarea placeholder="Roti reason" v-model="rotiReason"></TheTextarea>
     <br />
   </div>
   <div>
@@ -111,8 +119,9 @@ export default {
   },
   data() {
     return {
-      problems: "",
-      goals: "",
+      ratingDay: "",
+      rotiValue: "",
+      rotiReason: "",
       present: false,
       currentStudentIndex: 0,
     };
@@ -135,17 +144,19 @@ export default {
   },
   methods: {
     save() {
-      const checkin = {
+      const checkOut = {
         present: this.present,
         student:
           this.$store.getters.getCurrentClassAttendees[
             this.currentStudentIndex
           ],
-        problems: this.problems,
-        goals: this.goals,
+        ratingDay: this.ratingDay,
+        rotiReason: this.rotiReason,
+        rotiValue: this.rotiValue,
       };
-      this.$store.commit("addUpdateCheckin", checkin);
+      this.$store.commit("addUpdateCheckOut", checkOut);
     },
+
     handleFinish() {
       this.save();
       this.$router.push("/HubView");
@@ -157,14 +168,29 @@ export default {
       }
       return a;
     },
-    prepareFormFields() {
-      this.goals = "";
-      this.problems = "";
 
+    prepareFormFields() {
+      this.rotiReason = "";
+      this.ratingDay = "";
+      this.rotiValue = "";
+      this.present = "false";
       const currentStoreData =
-        this.$store.state.checking[this.currentStudentIndex];
-      this.goals = currentStoreData.goals;
-      this.problems = currentStoreData.problems;
+
+        this.$store.state.checkout[this.currentStudentIndex];
+      if (!currentStoreData) {
+        return;
+      }
+
+      if (currentStoreData.rotiReason) {
+        this.rotiReason = currentStoreData.rotiReason;
+      }
+      if (currentStoreData.ratingDay) {
+        this.ratingDay = currentStoreData.ratingDay;
+      }
+      if (currentStoreData.rotiValue) {
+        this.rotiValue = currentStoreData.rotiValue;
+      }
+
     },
 
     setNext() {

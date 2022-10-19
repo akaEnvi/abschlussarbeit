@@ -2,16 +2,19 @@
   <h1>Calendar week presenter</h1>
 
   <div class="select-input">
-    <select @change="storeCurrentClass" id="testSelect1">
-      <option value="">select class</option>
-      <option
-        v-for="className of getClasses"
-        :key="className"
-        :value="className"
-      >
-        {{ className }}
-      </option>
-    </select>
+    <label for="class-select">
+      <select @change="storeCurrentClass" id="class-select">
+        <option value="">select class</option>
+        <option
+          v-for="className of getClasses"
+          :key="className"
+          :value="className"
+        >
+          {{ className }}
+        </option>
+      </select>
+      <arrowIcon />
+    </label>
   </div>
   <div class="select-input">Moderator: {{ moderatorName }} <br /></div>
   <button @click="setRandomModerator">
@@ -27,9 +30,12 @@
 
 <script>
 import textBtn from "@/components/Button/textBtn.vue";
+import arrowIcon from "@/components/Icons/arrowIcon.vue";
+
 export default {
   components: {
     textBtn,
+    arrowIcon,
   },
   computed: {
     getClasses() {
