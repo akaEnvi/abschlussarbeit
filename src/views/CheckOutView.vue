@@ -18,56 +18,57 @@
   </div>
 
   <div class="checkin-content">
-    <TheTextarea
-      placeholder="Rating of the day"
-      v-model="problems"
-    ></TheTextarea>
+    <p>Rating of the day:</p>
+    <TheTextarea placeholder="say something" v-model="problems"></TheTextarea>
 
     <h2>How do I rate the day</h2>
-    <p>(from "1" Why did I get up? to "5" Superior)</p>
+    <p>(from 1⭐ Why did I get up? to 5⭐ Superior)</p>
     <div class="roti-radio">
       <label for="radio-button" class="radio-button"
         ><input
           type="radio"
           name="note_inhalt"
           value="Warum bin ich aufgestanden?"
-          id="roadio-button"
+          id="radio-button"
         />
-        1 Star</label
-      >
+        <span class="star">⭐</span>
+      </label>
+
       <label for="radio-button2" class="radio-button">
         <input
           type="radio"
           name="note_inhalt"
           value="Oh je!"
-          id="roadio-button2"
+          id="radio-button2"
         />
-        2 Stars</label
-      ><label for="radio-button3" class="radio-button">
+        ⭐⭐</label
+      >
+
+      <label for="radio-button3" class="radio-button">
         <input
           type="radio"
           name="note_inhalt"
           value="Ganz OK!"
-          id="roadio-button3"
-        />3 Stars</label
+          id="radio-button3"
+        />⭐⭐⭐</label
       >
       <label for="radio-button4" class="radio-button">
         <input
           type="radio"
           name="note_inhalt"
           value="Lief nach Plan"
-          id="roadio-button4"
+          id="radio-button4"
         />
-        4 Stars</label
+        ⭐⭐⭐⭐</label
       >
       <label for="radio-button5" class="radio-button">
         <input
           type="radio"
           name="note_inhalt"
           value="Überragend"
-          id="roadio-button5"
+          id="radio-button5"
         />
-        5 Stars</label
+        ⭐⭐⭐⭐⭐</label
       >
     </div>
 
@@ -162,7 +163,7 @@ export default {
       this.problems = "";
 
       const currentStoreData =
-        this.$store.state.checking[this.currentStudentIndex];
+        this.$store.state.checkIn[this.currentStudentIndex];
       this.goals = currentStoreData.goals;
       this.problems = currentStoreData.problems;
     },

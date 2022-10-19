@@ -3,7 +3,7 @@
   <h2>Session Moderator</h2>
   <pre>{{ moderatorName }}</pre>
   <h2>CheckIn</h2>
-  <pre>{{ checking }}</pre>
+  <pre>{{ checkIn }}</pre>
   <h2>Live Session</h2>
   <pre> {{ liveSessionPresence }}</pre>
   <h2>CheckOut</h2>
@@ -21,7 +21,7 @@ export default {
     ...mapState([
       "moderatorName",
       "liveSessionPresence",
-      "checking",
+      "checkIn",
       "checkout",
       "questions",
       "knowledge",
