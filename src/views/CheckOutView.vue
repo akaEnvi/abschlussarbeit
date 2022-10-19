@@ -20,7 +20,7 @@
   <div class="checkin-content">
     <TheTextarea
       placeholder="Rating of the day"
-      v-model="problems"
+      v-model="ratingDay"
     ></TheTextarea>
 
     <h2>How do I rate the day</h2>
@@ -28,6 +28,7 @@
     <div class="roti-radio">
       <label for="radio-button" class="radio-button"
         ><input
+          v-model="rotiValue"
           type="radio"
           name="note_inhalt"
           value="Warum bin ich aufgestanden?"
@@ -37,6 +38,7 @@
       >
       <label for="radio-button2" class="radio-button">
         <input
+          v-model="rotiValue"
           type="radio"
           name="note_inhalt"
           value="Oh je!"
@@ -45,6 +47,7 @@
         2 Stars</label
       ><label for="radio-button3" class="radio-button">
         <input
+          v-model="rotiValue"
           type="radio"
           name="note_inhalt"
           value="Ganz OK!"
@@ -53,6 +56,7 @@
       >
       <label for="radio-button4" class="radio-button">
         <input
+          v-model="rotiValue"
           type="radio"
           name="note_inhalt"
           value="Lief nach Plan"
@@ -62,6 +66,7 @@
       >
       <label for="radio-button5" class="radio-button">
         <input
+          v-model="rotiValue"
           type="radio"
           name="note_inhalt"
           value="Überragend"
@@ -71,7 +76,7 @@
       >
     </div>
 
-    <TheTextarea placeholder="Roti reason" v-model="goals"></TheTextarea>
+    <TheTextarea placeholder="Roti reason" v-model="rotiReason"></TheTextarea>
     <br />
   </div>
   <div>
@@ -111,8 +116,9 @@ export default {
   },
   data() {
     return {
-      problems: "",
-      goals: "",
+      ratingDay: "",
+      rotiValue: "",
+      rotiReason: "",
       present: false,
       currentStudentIndex: 0,
     };
@@ -135,17 +141,19 @@ export default {
   },
   methods: {
     save() {
-      const checkin = {
+      const checkOut = {
         present: this.present,
         student:
           this.$store.getters.getCurrentClassAttendees[
             this.currentStudentIndex
           ],
-        problems: this.problems,
-        goals: this.goals,
+        ratingDay: this.ratingDay,
+        rotiReason: this.rotiReason,
+        rotiValue: this.rotiValue,
       };
-      this.$store.commit("addUpdateCheckin", checkin);
+      this.$store.commit("addUpdateCheckOut", checkOut);
     },
+
     handleFinish() {
       this.save();
       this.$router.push("/HubView");
@@ -157,14 +165,27 @@ export default {
       }
       return a;
     },
-    prepareFormFields() {
-      this.goals = "";
-      this.problems = "";
 
+    prepareFormFields() {
+      this.rotiReason = "";
+      this.ratingDay = "";
+      this.rotiValue = "";
+      this.present = "false";
       const currentStoreData =
-        this.$store.state.checking[this.currentStudentIndex];
-      this.goals = currentStoreData.goals;
-      this.problems = currentStoreData.problems;
+        this.$store.state.checkout[this.currentStudentIndex];
+      if (!currentStoreData) {
+        return;
+      }
+
+      if (currentStoreData.rotiReason) {
+        this.rotiReason = currentStoreData.rotiReason;
+      }
+      if (currentStoreData.ratingDay) {
+        this.ratingDay = currentStoreData.ratingDay;
+      }
+      if (currentStoreData.rotiValue) {
+        this.rotiValue = currentStoreData.rotiValue;
+      }
     },
 
     setNext() {
