@@ -48,6 +48,13 @@ export default createStore({
       state.liveSessionPresence[index].present =
         !state.liveSessionPresence[index].present;
     },
+    setCheckInPresence(state, value) {
+      state.CheckInPresence = value;
+    },
+    updateSingleCheckInPresence(state, index) {
+      state.CheckInPresence[index].present =
+        !state.CheckInPresence[index].present;
+    },
     addUpdateCheckin(state, value) {
       const index = state.checkIn.findIndex((item) => {
         return item.student.uid === value.student.uid;
@@ -56,6 +63,23 @@ export default createStore({
         state.checkIn.push(value);
       } else {
         state.checkIn[index] = value;
+      }
+    },
+    setCheckOutPresence(state, value) {
+      state.CheckOutPresence = value;
+    },
+    updateSingleCheckOutPresence(state, index) {
+      state.CheckOutPresence[index].present =
+        !state.CheckOutPresence[index].present;
+    },
+    addUpdateCheckOut(state, value) {
+      const index = state.checkout.findIndex((item) => {
+        return item.student.uid === value.student.uid;
+      });
+      if (index === -1) {
+        state.checkout.push(value);
+      } else {
+        state.checkout[index] = value;
       }
     },
     setCheckout(state, value) {
@@ -111,6 +135,7 @@ export default createStore({
       ctx.state.moderatorName = "";
       ctx.state.questions = "";
       ctx.state.knowledge = "";
+      ctx.state.present = "false";
     },
   },
   modules: {},
