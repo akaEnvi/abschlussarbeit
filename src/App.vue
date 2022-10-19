@@ -4,7 +4,7 @@
       <ul>
         <li>
           <div class="burger-menu">
-            <div class="headerline">Cooding Bootcamp Europe</div>
+            <div class="headerline">Coding Bootcamp Europe</div>
           </div>
         </li>
         <li>
@@ -28,7 +28,7 @@
   <div class="main-content">
     <router-view />
   </div>
-  <div class="main-content"><h1>Abschlussproject BC Klasse Juni 2022</h1></div>
+  <div class="main-content"><h1>Abschlussproject BC Klasse Juli 2022</h1></div>
 </template>
 
 <script>
@@ -38,3 +38,7 @@ export default {
   },
 };
 </script>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Source+Sans+Pro:wght@600&display=swap");
+</style>

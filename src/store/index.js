@@ -26,7 +26,7 @@ export default createStore({
     questions: [""],
     knowledge: [""],
     checkout: [],
-    checking: [],
+    checkIn: [],
     liveSessionPresence: [],
     studentName: "",
   },
@@ -56,13 +56,13 @@ export default createStore({
         !state.CheckInPresence[index].present;
     },
     addUpdateCheckin(state, value) {
-      const index = state.checking.findIndex((item) => {
+      const index = state.checkIn.findIndex((item) => {
         return item.student.uid === value.student.uid;
       });
       if (index === -1) {
-        state.checking.push(value);
+        state.checkIn.push(value);
       } else {
-        state.checking[index] = value;
+        state.checkIn[index] = value;
       }
     },
     setCheckOutPresence(state, value) {
@@ -127,7 +127,7 @@ export default createStore({
     },
     reset(ctx) {
       ctx.state.moderatorName = "";
-      ctx.state.checking = [];
+      ctx.state.checkIn = [];
       ctx.state.liveSessionPresence = [];
       ctx.state.checkout = [];
       ctx.state.knowledge = [];

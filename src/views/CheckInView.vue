@@ -17,15 +17,11 @@
     </table>
   </div>
   <div class="checkin-content">
-    <TheTextarea
-      placeholder="What was frustrating yesterday"
-      v-model="problems"
-    ></TheTextarea>
+    <p>What was frustrating yesterday:</p>
+    <TheTextarea placeholder="say something" v-model="problems"></TheTextarea>
 
-    <TheTextarea
-      placeholder="What are my daily goals"
-      v-model="goals"
-    ></TheTextarea>
+    <p>What are my daily goals:</p>
+    <TheTextarea placeholder="say something" v-model="goals"></TheTextarea>
     <div>
       <continueBtn
         v-if="currentStudentIndex < getCurrentClassAttendees.length - 1"
@@ -115,10 +111,17 @@ export default {
     prepareFormFields() {
       this.goals = "";
       this.problems = "";
+
+      console.log(this.$store.state.checkIn);
+      const currentStoreData =
+        this.$store.state.checkIn[this.currentStudentIndex];
+      console.log(currentStoreData);
+
       this.present = "false";
       console.log(this.$store.state.checking);
       const currentStoreData =
         this.$store.state.checking[this.currentStudentIndex];
+
       if (!currentStoreData) {
         return;
       }

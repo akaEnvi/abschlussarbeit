@@ -10,6 +10,7 @@
 html {
   background-color: var(--clr-app);
 }
+
 body {
   display: block;
   width: 650px;
@@ -20,6 +21,7 @@ body {
 }
 
 h1 {
+  font-family: "Montserrat", sans-serif, Uppercase;
   color: var(--clr-primary);
   font-size: 24px;
   padding: 0px 0 30px 0;
@@ -27,10 +29,15 @@ h1 {
 }
 
 h2 {
+  font-family: "Montserrat", sans-serif;
   color: var(--clr-primary);
   font-size: 20px;
 
   text-transform: uppercase;
+}
+
+p {
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .header {
@@ -75,8 +82,13 @@ table {
   margin-block: 0;
 }
 th {
+  font-family: "Source Sans Pro", sans-serif;
   width: 200px;
   text-align: left;
+}
+
+td {
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .checkin-content {
@@ -98,7 +110,27 @@ th {
 }
 
 .select-input {
+  font-family: "Source Sans Pro", sans-serif;
   padding: 8px 12px;
+}
+
+#class-select {
+  all: unset;
+  border: 2px solid var(--clr-primary);
+  padding: 8px 20px;
+  border-radius: 2px;
+
+  width: 7rem;
+}
+
+.arrowDownIcon {
+  border: 1px solid black;
+  height: 1.5em;
+  background-color: var(--clr-surface);
+}
+
+::placeholder {
+  font-family: "Source Sans Pro", sans-serif;
 }
 button {
   all: unset;
@@ -116,21 +148,19 @@ button:hover {
   background-color: var(--clr-primary);
 }
 
+button,
+button:hover {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 textarea {
   all: unset;
   border: 2px solid var(--clr-primary);
   font-size: 14px;
 }
 
-.burger-menu {
-  display: flex;
-}
-
-.burger-menu > img {
-  padding: 0 28px 0 0;
-}
-
 nav {
+  font-family: "Montserrat", sans-serif;
   padding: 40px 0 15px 32px;
 }
 
@@ -185,13 +215,8 @@ li {
   margin-left: 50px;
 }
 
-select {
-  all: unset;
-  border: 2px solid var(--clr-primary);
-  padding: 8px 20px;
-}
-
 .roti-radio {
+  font-family: "Montserrat", sans-serif;
   display: flex;
 }
 
@@ -201,4 +226,8 @@ input[type="radio"] {
 
 .radio-button {
   padding: 10px 10px 10px 0;
+}
+
+.star {
+  filter: hue-rotate(--clr-primary);
 }
