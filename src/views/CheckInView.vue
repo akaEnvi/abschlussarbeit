@@ -115,10 +115,10 @@ export default {
     prepareFormFields() {
       this.goals = "";
       this.problems = "";
+      this.present = "false";
       console.log(this.$store.state.checking);
       const currentStoreData =
         this.$store.state.checking[this.currentStudentIndex];
-      console.log(currentStoreData);
       if (!currentStoreData) {
         return;
       }
