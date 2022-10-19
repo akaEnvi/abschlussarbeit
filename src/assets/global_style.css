@@ -40,6 +40,15 @@ p {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+ul {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.fulltime {
+  font-family: "Source Sans Pro", sans-serif;
+  color: var(--clr-primary);
+}
+
 .header {
   background-color: var(--clr-primary);
   width: 650px;

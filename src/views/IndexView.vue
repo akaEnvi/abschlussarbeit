@@ -13,7 +13,6 @@
           {{ className }}
         </option>
       </select>
-      <arrowIcon />
     </label>
   </div>
   <div class="select-input">Moderator: {{ moderatorName }} <br /></div>
@@ -30,12 +29,10 @@
 
 <script>
 import textBtn from "@/components/Button/textBtn.vue";
-import arrowIcon from "@/components/Icons/arrowIcon.vue";
 
 export default {
   components: {
     textBtn,
-    arrowIcon,
   },
   computed: {
     getClasses() {

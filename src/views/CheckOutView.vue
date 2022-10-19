@@ -18,10 +18,8 @@
   </div>
 
   <div class="checkin-content">
-
     <p>Rating of the day:</p>
-    <TheTextarea placeholder="say something" v-model="problems"></TheTextarea>
-
+    <TheTextarea placeholder="say something" v-model="ratingDay"></TheTextarea>
 
     <h2>How do I rate the day</h2>
     <p>(from 1⭐ Why did I get up? to 5⭐ Superior)</p>
@@ -175,7 +173,6 @@ export default {
       this.rotiValue = "";
       this.present = "false";
       const currentStoreData =
-
         this.$store.state.checkout[this.currentStudentIndex];
       if (!currentStoreData) {
         return;
@@ -190,7 +187,6 @@ export default {
       if (currentStoreData.rotiValue) {
         this.rotiValue = currentStoreData.rotiValue;
       }
-
     },
 
     setNext() {

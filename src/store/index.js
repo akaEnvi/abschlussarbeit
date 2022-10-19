@@ -55,7 +55,7 @@ export default createStore({
       state.CheckInPresence[index].present =
         !state.CheckInPresence[index].present;
     },
-    addUpdateCheckin(state, value) {
+    addUpdateCheckIn(state, value) {
       const index = state.checkIn.findIndex((item) => {
         return item.student.uid === value.student.uid;
       });
@@ -132,9 +132,6 @@ export default createStore({
       ctx.state.checkout = [];
       ctx.state.knowledge = [];
       ctx.state.questions = [];
-      ctx.state.moderatorName = "";
-      ctx.state.questions = "";
-      ctx.state.knowledge = "";
       ctx.state.present = "false";
     },
   },
