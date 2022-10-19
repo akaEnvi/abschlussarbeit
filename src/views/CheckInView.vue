@@ -112,6 +112,11 @@ export default {
       this.goals = "";
       this.problems = "";
 
+      this.present = "false";
+      const currentStoreData =
+        this.$store.state.checking[this.currentStudentIndex];
+
+
       console.log(this.$store.state.checkIn);
       const currentStoreData =
         this.$store.state.checkIn[this.currentStudentIndex];
@@ -121,6 +126,7 @@ export default {
       console.log(this.$store.state.checking);
       const currentStoreData =
         this.$store.state.checking[this.currentStudentIndex];
+
 
       if (!currentStoreData) {
         return;
